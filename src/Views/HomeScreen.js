@@ -1,10 +1,11 @@
 import React from 'react'
 import { View, Text } from 'react-native'
+import { styles } from "../Stylez/Styling";
 
 const HomeScreen = () => {
     return (
-        <View>
-            <Text></Text>
+        <View style={styles.container}>
+            <Text>HOME</Text>
         </View>
     )
 }
