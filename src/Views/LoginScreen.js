@@ -5,7 +5,7 @@ import { styles } from "../Stylez/Styling";
 import { Button, Input } from "react-native-elements";
 import { logUserIn } from "../API/Auths";
 
-const LoginScreen = () =>
+const LoginScreen = ({navigation}) =>
 {
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");

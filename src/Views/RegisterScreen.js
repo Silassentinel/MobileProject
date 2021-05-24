@@ -7,16 +7,19 @@ import { useEffect } from "react";
 import { Alert } from "react-native";
 import { styles } from "../Stylez/Styling";
 
-const RegisterScreen = () =>
+const RegisterScreen = ({navigation}) =>
 {
     const [email, setEmail] = useState(null);
     const [pw, setPw] = useState(null);
     const [confimPw, setConfirmPw] = useState(null);
     useEffect(() => 
     {
-        if (pw === confimPw) 
+        if(pw !==null || confimPw!==null)
         {
-            Alert.alert("correct!");
+            if (pw === confimPw) 
+            {
+                Alert.alert("correct!");
+            }
         }
     }, []);
     return (

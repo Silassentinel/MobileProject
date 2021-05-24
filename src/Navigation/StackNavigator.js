@@ -10,9 +10,9 @@ const StackNavigator = () =>
 {
     return (
         <>
-            <Stack.Navigator>
-                <Stack.Screen name="List" component={ FavoritesScreen } />
-                <Stack.Screen name="Details" component={ DetailScreen } />
+            <Stack.Navigator >
+                <Stack.Screen name="List" component={ FavoritesScreen }  />
+                <Stack.Screen name="Details" component={ DetailScreen } options={null} />
             </Stack.Navigator>
         </>
     );
