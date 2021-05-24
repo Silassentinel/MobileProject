@@ -8,15 +8,15 @@ const Product = ({ productData }) =>
     return (
         <View style={ styles.container }>
             {
-                productData ?
-                    <View>
-                        <Text>{ productData.image }</Text>
-                        <Text>{ productData.title }</Text>
-                        <Text>{ productData.price }</Text>
-                        <Text>{ productData.description }</Text>
-                        <Button title="clickme to add to favo" />
-                    </View>
-                    : null
+                productData ? 
+                <View>            
+                    <Text>{ productData.image }</Text>
+                    <Text>{productData.title}</Text>
+                    <Text>{productData.price}</Text>
+                    <Text>{productData.description}</Text>
+                    <Button title="clickme to add to favo" />
+                </View> 
+                : null
             }
 
         </View>

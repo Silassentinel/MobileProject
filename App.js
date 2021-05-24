@@ -50,7 +50,7 @@ export default function App()
                 (<Stack.Screen name="loading" component={ LoadingScreen } />)
                 : (
 
-                  isLoggendIn ? (<Stack.Screen name="home" component={ TabNavigator } />)
+                  isLoggendIn ? (<Stack.Screen name="home" component={ TabNavigator }/>)
                     :
                     (
                       <>
