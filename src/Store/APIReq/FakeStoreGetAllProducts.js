@@ -6,7 +6,7 @@ import axios from "axios";
 // Daarom gebruiken we createAsyncThunk, waarbij we een naam maken voor de action type ('repos/fetchRepos')
 // en daarna dan asynchrone code mee te geven
 // Dit maakt gebruik van de async await syntax
-export const getAllProducts = createAsyncThunk('apiCalls/getRepos', async () =>
+export const getAllProducts = createAsyncThunk('apiCalls/getAllProducts', async () =>
 {
     const response = await axios({
         method: 'GET',
@@ -27,17 +27,17 @@ const getAllProductsSlice = createSlice({
         [getAllProducts.pending]: (state, action) =>
         {
             state.status = 'loading';
-            state.repos = [];
+            state.products = [];
         },
         [getAllProducts.fulfilled]: (state, action) =>
         {
             state.status = 'succeeded';
-            state.repos = action.payload.data;
+            state.products = action.payload.data;
         },
         [getAllProducts.rejected]: (state, action) =>
         {
             state.status = 'failed';
-            state.repos = [];
+            state.products = [];
         }
     }
 });

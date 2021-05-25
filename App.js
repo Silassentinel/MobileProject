@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Provider } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -8,11 +8,11 @@ import firebase from "firebase";
 import { firebaseConfig } from "./config/FireBaseConfig";
 
 import { store } from "./src/Store/index";
-import HomeScreen from "./src/Views/HomeScreen";
 import LoadingScreen from "./src/Views/LoadingScreen";
 import LoginScreen from "./src/Views/LoginScreen";
 import RegisterScreen from "./src/Views/RegisterScreen";
 import TabNavigator from "./src/Navigation/TabNavigator";
+
 
 export default function App()
 {
@@ -50,7 +50,7 @@ export default function App()
                 (<Stack.Screen name="loading" component={ LoadingScreen } />)
                 : (
 
-                  isLoggendIn ? (<Stack.Screen name="home" component={ TabNavigator }/>)
+                  isLoggendIn ? (<Stack.Screen name="home" options={ { headerShown: false } } component={ TabNavigator } />)
                     :
                     (
                       <>

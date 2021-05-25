@@ -1,25 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import { FlatList } from "react-native-gesture-handler";
+import { styles } from "../Stylez/Styling";
 import Product from "./Product";
-const itemlist = [
-    { id: 1, title: "titel", price: 5, description: "zieverinpzakskes", category: "eerst", image: "linknaarwebsite" },
-    { id: 2, title: "titazfdezadl", price: 4, description: "zieverinzefzfpakskes", category: "eerst", image: "linknaergegarwebsite" },
-    { id: 3, title: "titael", price: 3, description: "zieverinzefzgrvbpakskes", category: "eerst", image: "linknaarweergegbsite" },
-    { id: 4, title: "titezezfl", price: 2, description: "zieverinpazefkskes", category: "eerst", image: "linknaegrearwebsite" },
-    { id: 5, title: "526+5", price: 1, description: "vervzefzevrthrzefg", category: "eerst", image: "linknaaregegwebsite" },
-    { id: 6, title: "526+5", price: 1, description: "vervzefzevrthrzefg", category: "eerst", image: "linknaaregegwebsite" },
-    { id: 7, title: "526+5", price: 1, description: "vervzefzevrthrzefg", category: "eerst", image: "linknaaregegwebsite" },
-    { id: 8, title: "526+5", price: 1, description: "vervzefzevrthrzefg", category: "eerst", image: "linknaaregegwebsite" }];
 
-const ProductList = () =>
+const ProductList = ({data}) =>
 {
-    const renderItem = ({item}) => (<Product productData={item}/>);
-    console.log("product list array: ",itemlist)
+    const renderItem = ({item}) => (<Product productData={item} itemId={item.id}/>);
     return (
-            <FlatList data={itemlist}
+            <FlatList 
+            data={data}
+            contentContainerStyle={{alignItems:"center",alignContent:"center"}}
             renderItem={renderItem}
-            keyExtractor={item => item.id.toString()}/>
+            keyExtractor={item => item.id.toString()}
+            ListEmptyComponent={ActivityIndicator}/>
     );
 };
 
