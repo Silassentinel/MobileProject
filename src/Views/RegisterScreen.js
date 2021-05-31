@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Alert } from "react-native";
 import { styles } from "../Stylez/Styling";
 
-const RegisterScreen = ({navigation}) =>
+const RegisterScreen = () =>
 {
     const [email, setEmail] = useState(null);
     const [pw, setPw] = useState(null);

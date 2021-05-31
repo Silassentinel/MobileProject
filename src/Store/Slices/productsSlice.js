@@ -9,24 +9,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const ProductsSlice = createSlice(
     {
         name: "products",
-        initialState: [
-            product={
-            id: "",
-            title: "",
-            price: 0,
-            category: "",
-            image: ""
-        }],
+        initialState: [],
         reducers:
         {
             remove: (state, action) => 
             {
-                
+                //state.initialState.find(action.payload).delete();
+                state.remove(state.find(action.payload));
             },
-            add: (state, action) => 
-            {
-                state.push(action.payload);
-            },
+            add: (state, action) =>{state.push(action.payload)},
             clear: (state, action) => 
             {
                 state = [];

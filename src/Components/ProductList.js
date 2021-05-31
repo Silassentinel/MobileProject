@@ -4,16 +4,16 @@ import { FlatList } from "react-native-gesture-handler";
 import { styles } from "../Stylez/Styling";
 import Product from "./Product";
 
-const ProductList = ({data}) =>
+const ProductList = ({ data }) =>
 {
-    const renderItem = ({item}) => (<Product productData={item} itemId={item.id}/>);
+    const renderItem = ({ item }) => (<Product productData={ item } itemId={ item.id } />);
     return (
-            <FlatList 
-            data={data}
-            contentContainerStyle={{alignItems:"center",alignContent:"center"}}
-            renderItem={renderItem}
-            keyExtractor={item => item.id.toString()}
-            ListEmptyComponent={ActivityIndicator}/>
+        <FlatList
+            data={ data }
+            contentContainerStyle={ { alignItems: "center", alignContent: "center" } }
+            renderItem={ renderItem }
+            keyExtractor={ item => item.id.toString() }
+            ListEmptyComponent={ ActivityIndicator } />
     );
 };
 
