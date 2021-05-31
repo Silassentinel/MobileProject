@@ -9,6 +9,7 @@ const ProductList = ({ data }) =>
     const renderItem = ({ item }) => (<Product productData={ item } itemId={ item.id } />);
     return (
         <FlatList
+        showsVerticalScrollIndicator={false}
             data={ data }
             contentContainerStyle={ { alignItems: "center", alignContent: "center" } }
             renderItem={ renderItem }

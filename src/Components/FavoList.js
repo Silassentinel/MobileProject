@@ -3,6 +3,7 @@ import { View, ActivityIndicator } from 'react-native'
 import { useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
 import FavoItem from "./FavoItem";
+import EmptyList from "./EmptyList";
 
 const FavoList = () => {
     const favoProducts = useSelector(state => state.manageFavos);
@@ -15,10 +16,9 @@ const FavoList = () => {
         <View>
         <FlatList
             data={ favoProducts }
-            contentContainerStyle={ { alignItems: "center", alignContent: "center" } }
             renderItem={ renderItem }
             keyExtractor={ item => item.id.toString() }
-            ListEmptyComponent={ ActivityIndicator } />
+            ListEmptyComponent={ EmptyList } />
         </View>
     )
 }

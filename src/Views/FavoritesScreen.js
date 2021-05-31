@@ -7,7 +7,6 @@ import FavoList from "../Components/FavoList";
 const FavoritesScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Text onPress={() => navigation.navigate("Details")}>blabla favo</Text>
             <FavoList/>
         </View>
     )

@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Text, Button, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Button, ActivityIndicator, Alert, Pressable } from 'react-native';
 import { Image } from "react-native-elements";
 import { styles } from "../Stylez/Styling";
 import { add, clear } from "../Store/Slices/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
 
 const Product = ({ productData, itemId }) =>
 {
+    const navigation = useNavigation();
     const favoProducts = useSelector(state => state.manageFavos);
     const dispatch = useDispatch();
     /**
@@ -42,20 +44,19 @@ const Product = ({ productData, itemId }) =>
         <View style={ styles.container }>
             {
                 productData ?
-                    <View>
+                <>
                         <Image
-                            style={ { width: 100, height: 100 } }
+                            style={ { width: 100, height: 100 , top:0,left:0} }
                             source={ { uri: productData.image } }
                             PlaceholderContent={ <ActivityIndicator /> }
                         />
                         <Text>{ productData.title }</Text>
                         <Text>€{ productData.price }</Text>
-                        <Text>{ productData.description }</Text>
                         <Button title="clickme to add to favo"
                             onPress={ () => handleClick()}
                             disabled={favoProducts.find(element => element.id === productData.id)}
                         />
-                    </View>
+                        </>
                     : null
             }
 

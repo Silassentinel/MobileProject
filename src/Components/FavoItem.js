@@ -1,20 +1,35 @@
 import { useNavigation } from "@react-navigation/native";
-import React from 'react'
-import { View, Pressable, Text } from 'react-native'
+import React from 'react';
+import { View, Text, Image, ActivityIndicator } from 'react-native';
+import { Button } from "react-native-elements";
+import { remove } from "../Store/Slices/productsSlice";
+import { useDispatch } from "react-redux";
+import { styles } from "../Stylez/Styling";
 
-const FavoItem = (props) => {
-    const {productData} = props
-    const navigation = useNavigation()
-    console.log('prodat:' , productData)
-    console.log("nav " , navigation)
+const FavoItem = (props) =>
+{
+    const { productData } = props;
+    const navigation = useNavigation();
+    const dispatch = useDispatch();
     return (
-        <View>
+        <>
             {
                 productData ?
-                <Text onPress={() => navigation.navigate("Details", {productData})}>{productData.title}</Text> : <Text> nothing to show</Text>
+                    <View style={ styles.container }>
+                        <Image
+                            style={ { width: 100, height: 100 , top:0,left:0} }
+                            source={ { uri: productData.image } }
+                            PlaceholderContent={ <ActivityIndicator /> }
+                        />
+                        <Text>{ productData.title }</Text>
+                        <Text>€{ productData.price }</Text>
+                    </View> : <Text> nothing to show</Text>
             }
-        </View>
-    )
-}
+            <Button
+                title={ "delete" }
+                onPress={ () => dispatch(remove(productData)) } />
+        </>
+    );
+};
 
-export default FavoItem
+export default FavoItem;

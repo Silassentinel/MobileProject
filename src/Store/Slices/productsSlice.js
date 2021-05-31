@@ -14,8 +14,7 @@ const ProductsSlice = createSlice(
         {
             remove: (state, action) => 
             {
-                //state.initialState.find(action.payload).delete();
-                state.remove(state.find(action.payload));
+                return state.filter(element => element.id !== action.payload.id);
             },
             add: (state, action) =>{state.push(action.payload)},
             clear: (state, action) => 
