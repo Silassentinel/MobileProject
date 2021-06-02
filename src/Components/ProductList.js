@@ -15,7 +15,7 @@ const ProductList = ({ data }) =>
                 data={ data }
                 renderItem={ renderItem }
                 keyExtractor={ item => item.id.toString() }
-                ListEmptyComponent={ EmptyList } />
+                ListEmptyComponent={ <EmptyList parent={ "Prod" } /> } />
         </View>
     );
 };

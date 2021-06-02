@@ -20,7 +20,7 @@ const FavoList = () =>
                 data={ favoProducts }
                 renderItem={ renderItem }
                 keyExtractor={ item => item.id.toString() }
-                ListEmptyComponent={ EmptyList } />
+                ListEmptyComponent={ <EmptyList parent={ "Favo" } /> } />
         </View>
     );
 };

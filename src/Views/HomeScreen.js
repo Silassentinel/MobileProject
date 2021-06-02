@@ -19,12 +19,14 @@ const HomeScreen = () =>
         dispatch(getAllProducts());
     }, []);
     return (
-        <View style={ styles.container } >
+        <>
             <HomeScreenHeader />
-            <ProductList data={ products } />
-            <Text>{ currUser.uid ? currUser.uid : "not logged in you cheated to get here" }</Text>
-            <Text>{ currUser.email ? currUser.email : "not logged in you cheated to get here" }</Text>
-        </View>
+            <View style={ styles.container } >
+                <ProductList data={ products } />
+                <Text>{ currUser.uid ? currUser.uid : "not logged in you cheated to get here" }</Text>
+                <Text>{ currUser.email ? currUser.email : "not logged in you cheated to get here" }</Text>
+            </View>
+        </>
     );
 };
 
