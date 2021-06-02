@@ -6,4 +6,14 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    DetailsScreen : {},
+    FavoriteScreen:{},
+    HomeScreen:{
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    LoadingScreen:{},
+    LoginScreen:{},
+    RegisterScreen:{},
   });

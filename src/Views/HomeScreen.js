@@ -6,18 +6,20 @@ import ProductList from "../Components/ProductList";
 import HomeScreenHeader from "../Components/HomeScreenHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Store/APIReq/FakeStoreGetAllProducts";
+import { Alert } from "react-native";
 
 const HomeScreen = () =>
 {
-    const dispatch = useDispatch(getAllProducts);
+    const dispatch = useDispatch();
     const { products } = useSelector(state => state.getAllProducts);
+    //products.map(item => Alert.alert(item.title));
     const currUser = firebase.auth().currentUser;
     useEffect(() =>
     {
         dispatch(getAllProducts());
     }, []);
     return (
-        <View style={ styles.container }>
+        <View style={ styles.container } >
             <HomeScreenHeader />
             <ProductList data={ products } />
             <Text>{ currUser.uid ? currUser.uid : "not logged in you cheated to get here" }</Text>

@@ -9,7 +9,6 @@ import { styles } from "../Stylez/Styling";
 const FavoList = () =>
 {
     const favoProducts = useSelector(state => state.manageFavos);
-    console.log(favoProducts);
     const renderItem = ({ item }) => (<FavoItem productData={ item } itemId={ item.id } />);
     /**
      * get usestate

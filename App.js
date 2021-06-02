@@ -12,6 +12,7 @@ import LoginScreen from "./src/Views/LoginScreen";
 import RegisterScreen from "./src/Views/RegisterScreen";
 import TabNavigator from "./src/Navigation/TabNavigator";
 
+
 export default function App()
 {
   if (!firebase.apps.length) // if there is no length the app isn't init'd so init
