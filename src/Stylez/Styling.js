@@ -7,7 +7,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   DetailsScreen: {},
-  FavoriteScreen: {},
+  FavoriteScreen: 
+  {
+    alignContent:"center",
+    justifyContent:"center"
+  },
+  FavoListBtn:
+  {
+    backgroundColor:"red"
+  },
   HomeScreen: {
     backgroundColor: '#fff',
     alignItems: 'center',
@@ -16,20 +24,25 @@ export const styles = StyleSheet.create({
   HomeScreenHeader: {
     flexDirection: 'row',
     alignContent: "center",
-    justifyContent:'space-between',
+    justifyContent: 'space-between',
     marginTop: 40,
   },
   HomeScreenHeaderLogoutButton:
   {
-    marginRight:20,
+    marginRight: 20,
     alignSelf: "flex-end"
   },
   HomeScreenHeaderText:
   {
-    alignSelf: "flex-start"
+    alignSelf: "flex-start",
+    margin: 10,
   },
   LoadingScreen: {},
   LoginScreen: {},
   RegisterScreen: {},
-  EmptyList: {},
+  EmptyList: 
+  {
+    alignContent:"center",
+    justifyContent:"center"
+  },
 });

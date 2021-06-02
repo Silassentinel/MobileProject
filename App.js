@@ -11,6 +11,7 @@ import LoadingScreen from "./src/Views/LoadingScreen";
 import LoginScreen from "./src/Views/LoginScreen";
 import RegisterScreen from "./src/Views/RegisterScreen";
 import TabNavigator from "./src/Navigation/TabNavigator";
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 
 export default function App()
@@ -41,6 +42,7 @@ export default function App()
   });
   return (
     <Provider store={ store }>
+      <SafeAreaProvider>
       <PersistGate loading={ null } persistor={ persistor }>
         <NavigationContainer>
           <Stack.Navigator>
@@ -57,6 +59,7 @@ export default function App()
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
+      </SafeAreaProvider>
     </Provider>
   );
 }

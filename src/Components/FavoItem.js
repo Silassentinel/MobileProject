@@ -27,7 +27,9 @@ const FavoItem = (props) =>
             }
             <Button
                 title={ "delete" }
-                onPress={ () => dispatch(remove(productData)) } />
+                onPress={ () => dispatch(remove(productData)) } 
+                style={styles.FavoListBtn}
+                />
         </>
     );
 };

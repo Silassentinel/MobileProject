@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Views/HomeScreen";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import StackNavigator from "./StackNavigator";
-import { useSelector, useDispatch } from "react-redux";
-import { getAllProducts } from "../Store/APIReq/FakeStoreGetAllProducts";
 
 const Tab = createBottomTabNavigator();
 

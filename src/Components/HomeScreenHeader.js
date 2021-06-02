@@ -8,7 +8,7 @@ const HomeScreenHeader = () =>
 {
     return (
         <View style={styles.HomeScreenHeader}>
-            <Text>this is will be replaced by a propper header</Text>
+            <Text style={styles.HomeScreenHeaderText}>this is will be replaced by a propper header</Text>
             {
                 /**
                  * Align to either side

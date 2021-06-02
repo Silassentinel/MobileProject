@@ -14,7 +14,7 @@ const EmptyList = ({ parent }) =>
     }
     const dispatch = useDispatch();
     return (
-        <View style={styles.container}>
+        <View style={styles.EmptyList}>
             <Text>Your Favorites List is empty go back to home and add some</Text>
             <>
             {

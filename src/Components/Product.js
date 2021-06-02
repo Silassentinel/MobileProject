@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Button, ActivityIndicator, Alert, TouchableHighlight } from 'react-native';
 import { Image } from "react-native-elements";
 import { styles } from "../Stylez/Styling";
 import { add } from "../Store/Slices/productsSlice";
@@ -55,7 +55,9 @@ const Product = ({ productData, itemId }) =>
         }
     };
     return (
-        <View style={ styles.container } onPress={() => navigation.navigate("details")}>
+        <TouchableHighlight style={ styles.container } onPress={() => navigation.navigate("List",{
+            screen: 'Details',
+            params:{productData}})}>
             {
                 productData ?
                     <>
@@ -77,7 +79,7 @@ const Product = ({ productData, itemId }) =>
                     : null
             }
 
-        </View>
+        </TouchableHighlight>
     );
 };
 
