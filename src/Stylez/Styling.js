@@ -7,6 +7,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   DetailsScreen: {},
+  DetailsScreenHeader:{},
+  DetailsScreenHeaderBackButton:
+  {
+    backgroundColor:"green",
+    justifyContent:"space-evenly"
+
+  },
   FavoriteScreen: 
   {
     alignContent:"center",
