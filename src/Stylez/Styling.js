@@ -78,7 +78,6 @@ export const styles = StyleSheet.create({
   },
   HomeScreenHeaderLogoutButton:
   {
-
     marginRight: 20,
     alignSelf: "flex-end"
   },

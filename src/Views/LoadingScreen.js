@@ -5,12 +5,14 @@ import { styles } from "../Stylez/Styling";
 const LoadingScreen = () =>
 {
     return (
+        <View style={styles.LoadingScreen}>
         <View style={ styles.container }>
             <Text>Getting your app ready</Text>
             <ActivityIndicator
                 size="large"
                 color="#00ff00"
             />
+            </View>
         </View>
     );
 };

@@ -24,7 +24,7 @@ const HomeScreenHeader = () =>
                 icon={
                     <Icon
                     name="logout"
-                    size={15}
+                    size={17}
                     color="#fff"
                     />
                 }
