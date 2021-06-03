@@ -3,22 +3,31 @@ import { View, Text } from 'react-native';
 import { Button } from "react-native-elements";
 import { logOut } from "../API/Auths";
 import { styles } from "../Stylez/Styling";
+import firebase from "firebase";
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const HomeScreenHeader = () =>
 {
+    const currUser = firebase.auth().currentUser;
     return (
-        <View style={styles.HomeScreenHeader}>
-            <Text style={styles.HomeScreenHeaderText}>this is will be replaced by a propper header</Text>
+        <View style={ styles.HomeScreenHeader }>
+            <Text style={ styles.HomeScreenHeaderText }>Welcome { currUser.email } to the fakestore app</Text>
             {
                 /**
                  * Align to either side
                  */
-                <Button 
-                style={styles.HomeScreenHeaderLogoutButton}
-                title="logout" 
-                onPress={ () => logOut() } 
-                type="outline"
-                //icon={}
+                <Button
+                    style={ styles.HomeScreenHeaderLogoutButton }
+                    title=""
+                    onPress={ () => logOut() }
+                    type="clear"
+                icon={
+                    <Icon
+                    name="logout"
+                    size={15}
+                    color="#fff"
+                    />
+                }
                 />
             }
         </View>

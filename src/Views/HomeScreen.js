@@ -6,7 +6,6 @@ import ProductList from "../Components/ProductList";
 import HomeScreenHeader from "../Components/HomeScreenHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../Store/APIReq/FakeStoreGetAllProducts";
-import { Alert } from "react-native";
 
 const HomeScreen = () =>
 {
