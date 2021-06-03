@@ -94,8 +94,12 @@ export const styles = StyleSheet.create({
     color:"#808080",
   },
   LoginScreen: {
+    flex:1,
     backgroundColor: '#000',
-    color:"#808080",
+    color:"#fff",
+  },
+  LoginScreenInput:{
+    color:"#fff",
   },
   RegisterScreen: {
     backgroundColor: '#000',

@@ -5,19 +5,22 @@ import { styles } from "../Stylez/Styling";
 import { Button, Input } from "react-native-elements";
 import { logUserIn } from "../API/Auths";
 
-const LoginScreen = ({navigation}) =>
+const LoginScreen = ({ navigation }) =>
 {
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");
     return (
-        <KeyboardAvoidingView style={ styles.container }>
+        <KeyboardAvoidingView style={ styles.LoginScreen }>
             <Input
+            style={styles.LoginScreenInput}
+                autoFocus={ true }
                 label="email"
                 autoCapitalize='none'
                 value={ email }
                 onChangeText={ (text) => setEmail(text) }
             />
             <Input
+            style={styles.LoginScreenInput}
                 label="pw"
                 secureTextEntry={ true }
                 value={ pw }

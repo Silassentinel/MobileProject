@@ -14,7 +14,7 @@ const RegisterScreen = () =>
     const [confimPw, setConfirmPw] = useState(null);
     useEffect(() => 
     {
-        if(pw !==null || confimPw!==null)
+        if (pw !== null || confimPw !== null)
         {
             if (pw === confimPw) 
             {
@@ -25,6 +25,7 @@ const RegisterScreen = () =>
     return (
         <KeyboardAvoidingView style={ styles.container }>
             <Input label="email"
+                autoFocus={ true }
                 value={ email }
                 autoCapitalize='none'
                 onChangeText={ (text) => setEmail(text) } />
