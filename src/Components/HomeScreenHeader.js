@@ -6,8 +6,11 @@ import { styles } from "../Stylez/Styling";
 import firebase from "firebase";
 import Icon from 'react-native-vector-icons/AntDesign';
 
+//zelf gemaakte header omdat de HomeHeader bij elk scherm als parent bleef staan
+// door zalf een te maken kiezen we zelf waar en hoe deze tevoorschijn komt
 const HomeScreenHeader = () =>
 {
+    // ophalen van gebruiker info via firebase
     const currUser = firebase.auth().currentUser;
     return (
         <View style={ styles.HomeScreenHeader }>

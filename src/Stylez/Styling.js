@@ -93,6 +93,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#000',
     color:"#808080",
   },
+  LoadingScreenText:
+  {
+    color:"#0f0"
+  },
+  LoginScreenInputWrapper:
+  {
+    margin:5,
+  },
   LoginScreen: {
     flex:1,
     backgroundColor: '#000',
@@ -108,8 +116,13 @@ export const styles = StyleSheet.create({
   EmptyList: 
   {
     backgroundColor: '#000',
-    color:"#808080",
+    color:"#fff",
     alignContent:"center",
     justifyContent:"center"
+  },
+  EmptyListText:{
+    color:"#fff",
+    justifyContent:"center",
+    flex:1
   },
 });

@@ -4,6 +4,8 @@ import { styles } from "../Stylez/Styling";
 
 const LoadingScreen = () =>
 {
+    //scherm om op te tonen dat de app aan het laden is voor tragere devices
+    // dit geeft een betere UX
     return (
         <View style={styles.LoadingScreen}>
         <View style={ styles.container }>

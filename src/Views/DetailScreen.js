@@ -9,10 +9,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const DetailScreen = ({ route, navigation }) =>
 {
     const dispatch = useDispatch();
+    // producten ophalen van uit de route (doorgegeven via de navigate functie)
     const { productData } = route.params;
     const handleClick = () =>
     {
         dispatch(add(productData));
+        //teruggaan
         navigation.goBack();
     };
     return (

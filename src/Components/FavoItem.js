@@ -1,4 +1,3 @@
-import { useNavigation } from "@react-navigation/native";
 import React from 'react';
 import { View, Text, Image, ActivityIndicator } from 'react-native';
 import { Button } from "react-native-elements";
@@ -9,8 +8,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const FavoItem = (props) =>
 {
+    //uit de properties ophalen van de product info
     const { productData } = props;
-    const navigation = useNavigation();
     const dispatch = useDispatch();
     return (
         <>
@@ -24,7 +23,8 @@ const FavoItem = (props) =>
                         />
                         <Text style={styles.productTitle}>{ productData.title }</Text>
                         <Text style={styles.productTitle}>€{ productData.price }</Text>
-                    </View> : <Text> nothing to show</Text>
+                    </View> 
+                    : <Text> nothing to show</Text>
             }
             <Button
                 icon=
@@ -34,6 +34,7 @@ const FavoItem = (props) =>
                         color="red" />
                 }
                 title={ "delete" }
+                //verwijderen van product uit de lijst van favo's
                 onPress={ () => dispatch(remove(productData)) }
                 buttonStyle={styles.FavoItemBtn}
             />

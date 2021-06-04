@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
+// object destructuring om meteen de productData uit de props te halen
 const Product = ({ productData, itemId }) =>
 {
     // if (productData)
@@ -21,6 +21,7 @@ const Product = ({ productData, itemId }) =>
     const navigation = useNavigation();
     const favoProducts = useSelector(state => state.manageFavos);
     const dispatch = useDispatch();
+    // werkt niet zo goed als een inline tenary helaas
     const handleDisable = () => 
     {
         return favoProducts.find(element => element.id === productData.id) !== null ? false : true;
@@ -39,6 +40,7 @@ const Product = ({ productData, itemId }) =>
         {
             dispatch(add(productData));
             console.log(`you've added ${productData.title} to your favolist`);
+            //alert menu opties 
             const buttonsToShow = [{
                 text: "Accept",
                 onPress: () =>
@@ -58,6 +60,11 @@ const Product = ({ productData, itemId }) =>
         }
     };
     return (
+        //touchable om heel het product klikbaar te maken
+        // bij navigate geven we meteen heel het product door 
+        // we gaan naar de list navigeren wat de stacknav is
+        // en van de stacknav willen we het details scherm.
+        // hier is een gekende issue mee als list niet eerst geladen is kan deze niet meer getoond worden
         <TouchableHighlight style={ styles.container } onPress={ () => navigation.navigate("List", {
             screen: 'Details',
             params: { productData }

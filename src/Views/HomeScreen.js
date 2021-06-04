@@ -12,7 +12,6 @@ const HomeScreen = () =>
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.getAllProducts);
     //products.map(item => Alert.alert(item.title));
-    const currUser = firebase.auth().currentUser;
     useEffect(() =>
     {
         dispatch(getAllProducts());
@@ -22,8 +21,6 @@ const HomeScreen = () =>
             <HomeScreenHeader />
             <View style={ styles.container } >
                 <ProductList data={ products } />
-                <Text>{ currUser.uid ? currUser.uid : "not logged in you cheated to get here" }</Text>
-                <Text>{ currUser.email ? currUser.email : "not logged in you cheated to get here" }</Text>
             </View>
         </>
     );
