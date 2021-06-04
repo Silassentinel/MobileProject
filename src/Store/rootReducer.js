@@ -9,6 +9,7 @@ export const rootReducer = combineReducers(
         //localproducts: storeLocal,
         getAllProducts: getAllProductsReducer,
         getProductViaId: getProductViaIdReducer,
+        // bijhouden van de favos in een array
         manageFavos: ProductsSliceReducer
     });
 //#endregion

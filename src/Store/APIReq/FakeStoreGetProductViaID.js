@@ -5,7 +5,7 @@ import axios from "axios";
 // niet om kunnen met asyncrhone code
 // Daarom gebruiken we createAsyncThunk, waarbij we een naam maken voor de action type ('repos/fetchRepos')
 // en daarna dan asynchrone code mee te geven
-// Dit maakt gebruik van de async await syntax
+// Dit maakt gebruik van de async await syntax mogelijk
 export const getProductViaID = createAsyncThunk('apiCalls/getProductsByID', async (id) =>
 {
     const response = await axios({

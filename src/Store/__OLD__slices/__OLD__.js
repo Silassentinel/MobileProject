@@ -1,3 +1,4 @@
+//diende als voorbeeld niet gebruikt
 //#region imports here:
 import { createSlice } from "@reduxjs/toolkit";
 //#endregion

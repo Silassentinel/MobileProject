@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+// styling apart dat geeft meer CSS gevoel
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
