@@ -27,7 +27,7 @@ export default function App()
   const persistor = persistStore(store);
   // stack maken waarin de stackscreens komen
   const Stack = createStackNavigator();
-  // bijhouden op de app aan het laden is om al dan niet loading screen te tonen
+  // bijhouden of de app aan het laden is om al dan niet loading screen te tonen
   const [isLoading, setIsLoading] = useState(true);
   // useEffect met lege array om slechts 1maal uit te voeren
   useEffect(() =>
